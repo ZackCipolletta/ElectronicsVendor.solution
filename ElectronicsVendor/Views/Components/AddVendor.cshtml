@@ -1,0 +1,24 @@
+@{
+  Layout = "_Layout";
+}
+@model ElectronicsVendor.Models.Component
+
+<h2>Add a vendor for component @Html.DisplayFor(model => model.Type)</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.ComponentId)
+
+    @Html.Label("Select vendor")
+    @Html.DropDownList("VendorId")
+
+    <button class="green" type="submit">Save</button>
+}
+
+<div class="button-area">
+  <a href='@Url.Action("Index")'>
+    <button>Exit without saving</button>
+  </a>
+</div>
+
+<p>@Html.ActionLink("Back to list", "Index")</p>

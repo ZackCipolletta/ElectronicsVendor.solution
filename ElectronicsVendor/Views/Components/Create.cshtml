@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+@model ElectronicsVendor.Models.Component
+
+<h4>Add a new component</h4>
+
+@using (Html.BeginForm())
+{
+  <div class="form-row">
+    @Html.LabelFor(model => model.Type)
+    @Html.TextBoxFor(model => model.Type)
+    <button class="green" type="submit">Add new component</button>
+  </div>
+}
+<p>@Html.ActionLink("Show all components", "Index")</p>

@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+@model ElectronicsVendor.Models.Vendor
+
+<h4>Add a new vendor</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  <input type="submit" value="Add new vendor" class="btn btn-primary" />
+}
+<p>@Html.ActionLink("Show all vendors", "Index")</p>

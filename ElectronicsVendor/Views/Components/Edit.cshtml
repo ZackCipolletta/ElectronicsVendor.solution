@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+@model ElectronicsVendor.Models.Component
+
+<h2>Editing component @Html.DisplayFor(model => model.Type)</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.ComponentId)
+  <div class="form-row">
+    @Html.LabelFor(model => model.Type)
+    @Html.EditorFor(model => model.Type)
+    <button class="green" type="submit">Save</button>
+  </div>
+}
+
+<div class="button-area">
+  <a href='@Url.Action("Index")'>
+    <button>Exit without saving</button>
+  </a>
+</div>

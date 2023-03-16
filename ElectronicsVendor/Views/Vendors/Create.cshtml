@@ -1,15 +1,20 @@
 @{
-  Layout = "_Layout";
+  Layout = "_Layout-Admin";
 }
 @model ElectronicsVendor.Models.Vendor
 
-<h4>Add a new vendor</h4>
+<h2>Create a new vendor</h2>
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
-
-  <input type="submit" value="Add new vendor" class="btn btn-primary" />
+  <div class="form-row">
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+    <button class="green" type="submit">Add vendor</button>
+  </div>
 }
-<p>@Html.ActionLink("Show all vendors", "Index")</p>
+<div class="button-area">
+  <a href='@Url.Action("Index")'>
+    <button>Cancel</button>
+  </a>
+</div>

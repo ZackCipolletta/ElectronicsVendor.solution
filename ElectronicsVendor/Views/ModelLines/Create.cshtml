@@ -1,13 +1,14 @@
 @{
-  Layout = "_Layout";
+  Layout = "_Layout-Admin";
 }
 
 @model ElectronicsVendor.Models.ModelLine
 
-<h4>Add a new model of <span class="highlighted">@ViewBag.Component.Type</span></h4>
+<h2>Add a new model of <span class="highlighted">@ViewBag.Component.Type</span></h2>
 
 @using (Html.BeginForm())
 {
+
    @* @Html.Hidden("Id"); *@
 
   @Html.LabelFor(model => model.Name)
@@ -24,4 +25,9 @@
   <p></p>
   <p><input type="submit" value="Add new model" class="btn btn-default" /></p>
 }
-<p>@Html.ActionLink("Show all models", "Index")</p>
+
+<div class="button-area">
+  <a href='@Url.Action("Details", "Components", new { id = ViewBag.Component.ComponentId})'>
+    <button>Cancel</button>
+  </a>
+</div>

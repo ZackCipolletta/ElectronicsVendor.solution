@@ -6,17 +6,27 @@
 
 <h2>Edit</h2>
 
+<h4>Component: @Html.DisplayFor(model => model.Component.Type)</h4>
 <h4>Edit this model: @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.ModelLineId)
+  @Html.HiddenFor(model => model.ComponentId)
 
-  @Html.LabelFor(model => model.Name)
+  @Html.LabelFor(model => model.Name)<span>:</span><br>
   @Html.EditorFor(model => model.Name)
+  <br>
+  <br>
+  @Html.LabelFor(model => model.Manufacturer)<span>:</span><br>
+  @Html.EditorFor(model => model.Manufacturer)
+  <br>
+  <br>
+  <span>Manufacturer price: </span><br>
+  @Html.EditorFor(model => model.Price)
 
-  @Html.LabelFor(model => model.Component)
-  @Html.DropDownList("ComponentId")
+  @* @Html.LabelFor(model => model.Component)
+  @Html.DropDownList("ComponentId") *@
 
   <input type="submit" value="Save" />
 }

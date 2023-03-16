@@ -35,5 +35,31 @@ namespace ElectronicsVendor.Controllers
       _db.SaveChanges();
       return RedirectToAction("Details", "Components", new { id = id });
     }
+
+        public ActionResult Details(int id)
+    {
+      ModelLine thisModelLine = _db.ModelLines
+            .Include(modelLine => modelLine.Component)
+            .ThenInclude(component => component.JoinEntities)
+            .ThenInclude(join => join.Vendor)
+            .FirstOrDefault(modelLine => modelLine.ModelLineId == id);
+      return View(thisModelLine);
+    }
+
+        public ActionResult Edit(int id)
+    {
+      ModelLine thisModelLine = _db.ModelLines
+            .Include(modelLine => modelLine.Component)
+            .FirstOrDefault(modelLine => modelLine.ModelLineId == id);
+      return View(thisModelLine);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(ModelLine modelLine, int id)
+    {
+      _db.ModelLines.Update(modelLine);
+      _db.SaveChanges();
+      return RedirectToAction("Details", new {id = id});
+    }
   }
 }

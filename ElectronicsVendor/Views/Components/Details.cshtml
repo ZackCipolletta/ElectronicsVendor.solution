@@ -40,7 +40,9 @@ else
   <ul>
   @foreach (ModelLine modelLine in Model.ModelLines)
     {
-      <li>@modelLine.Name</li>
+      <li><a href='@Url.Action("Details", "ModelLines", new { id = modelLine.ModelLineId })'>
+        @modelLine.Name
+      </a></li>
     }
   </ul>
 }

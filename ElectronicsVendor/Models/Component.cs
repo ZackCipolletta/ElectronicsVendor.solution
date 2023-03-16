@@ -6,7 +6,6 @@ namespace ElectronicsVendor.Models
   public class Component
   {
     public int ComponentId { get; set; }
-    // public int ModelLine { get; set; }
     public string Type { get; set; }
     public List<ComponentVendor> JoinEntities { get; }
     public List<ModelLine> ModelLines { get; set; }

@@ -25,7 +25,15 @@ body {
   padding: var(--header-height) 0;
 }
 
-h3 {
+body.admin {
+  background-color: rgb(34, 46, 58);
+}
+
+body.admin header::after {
+  content: 'ADMIN';
+}
+
+h4 {
   color: rgb(165, 165, 165);
 }
 
@@ -39,6 +47,7 @@ button {
 	cursor: pointer;
 	transition: color 300ms ease, scale 300ms ease, outline 200ms ease;
   border-width: 0;
+  min-width: 10rem;
 }
 
 button, input, select {
@@ -48,6 +57,11 @@ button, input, select {
 
 input, select {
   padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+input {
+  padding: 0.5rem;
 }
 
 button.green {
@@ -60,6 +74,7 @@ button.yellow {
 
 button.red {
 	background-color: rgb(159, 0, 0);
+  min-width: unset;
 }
 
 button:hover {
@@ -80,10 +95,11 @@ header, footer {
   position:fixed;
 	left:0px;
 	width:100%;
-	background:#111;
+	background:#ffffff18;
   color: #baffb8;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   padding: 0 1rem;
 }
@@ -91,6 +107,10 @@ header, footer {
 header {
   height: var(--header-height);
   top: 0;
+}
+
+header::after {
+  color: rgb(181, 181, 255);
 }
 
 header > h1 {
@@ -102,14 +122,29 @@ footer {
   bottom: 0;
 }
 
+footer > .button-area {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+footer > .button-area > button {
+  margin: 0 1rem;
+}
+
+footer button:first-of-type {
+  min-width: unset;
+}
+
 ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  margin-bottom: 2rem;
   display: flex;
   gap: 0.5rem;
 }
-
 
 li {
   background-color: #ffffff22;
@@ -125,12 +160,16 @@ li {
 }
 
 .component-list {
-  flex-direction: column;
+  /* flex-direction: column; */
 }
 .component-list > li {
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+form.admin-form {
+  background-color: green;
 }
 
 .form-row {

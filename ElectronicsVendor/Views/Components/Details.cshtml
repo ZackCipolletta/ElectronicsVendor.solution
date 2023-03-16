@@ -13,7 +13,7 @@
 }
 else
 {
-  <h3>Vendors with this component:</h3>
+  <h4>Vendors with this component:</h4>
   <ul class="vendor-list">
   @foreach (ComponentVendor join in Model.JoinEntities)
     {
@@ -25,23 +25,28 @@ else
         }
       </li>
     }
-    <a href='@Url.Action("AddVendor", new { id = Model.ComponentId })'>
-      <button class="green">Add a Vendor</button>
-    </a>
   </ul>
-
-  <h3>Models of this component:</h3>
+}
+<a href='@Url.Action("AddVendor", new { id = Model.ComponentId })'>
+  <button class="green">Add a Vendor</button>
+</a>
+@if (@Model.ModelLines.Count == 0)
+{
+  <p>There are no models for this component.</p>
+}
+else
+{
+  <h4>Models of this component:</h4>
   <ul>
   @foreach (ModelLine modelLine in Model.ModelLines)
     {
       <li>@modelLine.Name</li>
     }
-    <a href='@Url.Action("Create", "ModelLines", new { id = Model.ComponentId })'>
-      <button class="green">Add a Model</button>
-    </a>
   </ul>
 }
-
+<a href='@Url.Action("Create", "ModelLines", new { id = Model.ComponentId })'>
+  <button class="green">Add a Model</button>
+</a>
 <div class="button-area">
   <a href='@Url.Action("Index")'>
     <button>Back to List</button>

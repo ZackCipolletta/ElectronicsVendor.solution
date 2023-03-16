@@ -16,7 +16,16 @@
   {
     <a href='@Url.Action("Details", new { id = component.ComponentId })'>
       <li>
-        @component.Type
+        Manufacturer: @component.Manufacturer
+      </li> 
+      <li>
+        Name: @component.Name
+      </li> 
+      <li>
+        Price: $@component.Price
+      </li> 
+      <li>
+        Type: @component.Type
       </li> 
     </a>
   }

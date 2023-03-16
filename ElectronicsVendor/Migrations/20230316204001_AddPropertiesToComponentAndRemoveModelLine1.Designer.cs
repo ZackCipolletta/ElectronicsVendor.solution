@@ -2,6 +2,7 @@
 using ElectronicsVendor.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ElectronicsVendor.Migrations
 {
     [DbContext(typeof(ElectronicsVendorContext))]
-    partial class ElectronicsVendorContextModelSnapshot : ModelSnapshot
+    [Migration("20230316204001_AddPropertiesToComponentAndRemoveModelLine1")]
+    partial class AddPropertiesToComponentAndRemoveModelLine1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,34 +62,6 @@ namespace ElectronicsVendor.Migrations
                     b.HasIndex("VendorId");
 
                     b.ToTable("ComponentVendors");
-                });
-
-            modelBuilder.Entity("ElectronicsVendor.Models.Manufacturer", b =>
-                {
-                    b.Property<int>("ManufacturerId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext");
-
-                    b.HasKey("ManufacturerId");
-
-                    b.ToTable("Manufacturers");
-                });
-
-            modelBuilder.Entity("ElectronicsVendor.Models.Type", b =>
-                {
-                    b.Property<int>("TypeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext");
-
-                    b.HasKey("TypeId");
-
-                    b.ToTable("Types");
                 });
 
             modelBuilder.Entity("ElectronicsVendor.Models.Vendor", b =>

@@ -25,7 +25,9 @@ namespace ElectronicsVendor.Controllers
 
     public ActionResult Create()
     {
-      ViewBag.CategoryId = new SelectList(_db.Vendors, "VendorId", "Name");
+      // ViewBag.CategoryId = new SelectList(_db.Vendors, "VendorId", "Name");
+      ViewBag.Manufacturers = _db.Manufacturers;
+      ViewBag.Types = _db.Types;
       return View();
     }
 

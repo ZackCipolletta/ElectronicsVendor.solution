@@ -46,7 +46,7 @@ namespace ElectronicsVendor.Controllers
     public ActionResult AddComponent(int id)
     {
       Vendor thisVendor = _db.Vendors.FirstOrDefault(vendors => vendors.VendorId == id);
-      ViewBag.ComponentId = new SelectList(_db.Components, "ComponentId", "Type");
+      ViewBag.ComponentId = new SelectList(_db.Components, "ComponentId", "Name", "Name");
       return View(thisVendor);
     }
 // ------------------------------------------------------------------

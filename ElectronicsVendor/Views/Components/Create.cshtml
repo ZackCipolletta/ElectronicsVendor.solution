@@ -9,7 +9,7 @@
 @using (Html.BeginForm())
 {
   <div class="form-row">
-  @Html.Label("Select Manufacturer")
+  @Html.Label("Manufacturer")
   @Html.DropDownListFor(model => model.Manufacturer, new SelectList(ViewBag.Manufacturers, "Name", "Name"))
   </div>
   <div class="form-row">

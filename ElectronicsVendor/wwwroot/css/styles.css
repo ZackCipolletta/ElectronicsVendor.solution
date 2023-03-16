@@ -64,6 +64,10 @@ input {
   padding: 0.5rem;
 }
 
+select {
+  width: 8rem;
+}
+
 button.green {
 	background-color: green;
 }
@@ -160,12 +164,37 @@ li {
 }
 
 .component-list {
-  /* flex-direction: column; */
-}
-.component-list > li {
-  display: flex;
   gap: 1rem;
-  align-items: center;
+}
+
+.component-list.narrow li {
+  width: max-content;
+}
+
+.component-list > a {
+  background-color: rgba(72, 72, 72, 0.363);
+  display: flex;
+  flex-direction: column;
+  width: 12rem;
+  align-items: stretch;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 1rem;
+}
+
+.component-list li {
+  width: 100%;
+}
+.component-list a > div {
+  margin: 1rem;
+  
+}
+
+form {
+  margin: 2rem 0;
+}
+form button {
+  margin-top: 1rem;
 }
 
 form.admin-form {
@@ -175,6 +204,8 @@ form.admin-form {
 .form-row {
   display: flex;
   gap: 1rem;
+  justify-content: space-between;
   align-items: center;
   margin: 1rem;
+  width: 24rem;
 }

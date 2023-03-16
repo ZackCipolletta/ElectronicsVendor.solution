@@ -11,7 +11,7 @@
   <h3>No components have been added yet!</h3>
 }
 
-<ul>
+<ul class="component-list">
   @foreach (Component component in Model)
   {
     <a href='@Url.Action("Details", new { id = component.ComponentId })'>

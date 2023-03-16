@@ -176,4 +176,5 @@ form.admin-form {
   display: flex;
   gap: 1rem;
   align-items: center;
+  margin: 1rem;
 }

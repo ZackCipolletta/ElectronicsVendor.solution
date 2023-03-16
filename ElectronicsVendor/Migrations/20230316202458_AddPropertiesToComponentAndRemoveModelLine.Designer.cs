@@ -2,6 +2,7 @@
 using ElectronicsVendor.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ElectronicsVendor.Migrations
 {
     [DbContext(typeof(ElectronicsVendorContext))]
-    partial class ElectronicsVendorContextModelSnapshot : ModelSnapshot
+    [Migration("20230316202458_AddPropertiesToComponentAndRemoveModelLine")]
+    partial class AddPropertiesToComponentAndRemoveModelLine
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

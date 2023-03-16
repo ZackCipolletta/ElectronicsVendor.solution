@@ -7,6 +7,9 @@
 
 <h2>Details for component <span class="highlighted">@Html.DisplayFor(model => model.Type)<span></h2>
 
+
+<div class="detail-list">
+
 @if (@Model.JoinEntities.Count == 0)
 {
   <p>There are no vendors for this component.</p>
@@ -30,25 +33,8 @@ else
 <a href='@Url.Action("AddVendor", new { id = Model.ComponentId })'>
   <button class="green">Add a Vendor</button>
 </a>
-@if (@Model.ModelLines.Count == 0)
-{
-  <p>There are no models for this component.</p>
-}
-else
-{
-  <h4>Models of this component:</h4>
-  <ul>
-  @foreach (ModelLine modelLine in Model.ModelLines)
-    {
-      <li><a href='@Url.Action("Details", "ModelLines", new { id = modelLine.ModelLineId })'>
-        @modelLine.Name
-      </a></li>
-    }
-  </ul>
-}
-<a href='@Url.Action("Create", "ModelLines", new { id = Model.ComponentId })'>
-  <button class="green">Add a Model</button>
-</a>
+</div>
+
 <div class="button-area">
   <a href='@Url.Action("Index")'>
     <button>Back to List</button>

@@ -8,10 +8,22 @@
 @using (Html.BeginForm())
 {
   <div class="form-row">
+    @Html.LabelFor(model => model.Manufacturer)
+    @Html.TextBoxFor(model => model.Manufacturer)
+  </div>
+  <div class="form-row">
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+  </div>
+  <div class="form-row">
     @Html.LabelFor(model => model.Type)
     @Html.TextBoxFor(model => model.Type)
-    <button class="green" type="submit">Save</button>
   </div>
+  <div class="form-row">
+    @Html.LabelFor(model => model.Price, "Wholesale Price")
+    @Html.TextBoxFor(model => model.Price)
+  </div>
+  <button class="green" type="submit">Save</button>
 }
 
 <div class="button-area">

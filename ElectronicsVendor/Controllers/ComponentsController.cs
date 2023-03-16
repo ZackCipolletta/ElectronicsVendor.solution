@@ -50,7 +50,6 @@ namespace ElectronicsVendor.Controllers
       Component thisComponent = _db.Components
           .Include(component => component.JoinEntities)
           .ThenInclude(join => join.Vendor)
-          .Include(component => component.ModelLines)
           .FirstOrDefault(component => component.ComponentId == id);
       return View(thisComponent);
     }

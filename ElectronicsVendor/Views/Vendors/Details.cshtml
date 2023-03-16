@@ -30,8 +30,24 @@ else
     }
   </ul>
 }
+<a href='@Url.Action("AddComponent", new { id = Model.VendorId })'>
+  <button class="green">Add a Component</button>
+</a>
 
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<div class="button-area">
+  <a href='@Url.Action("Index")'>
+    <button>Back to List</button>
+  </a>
+  <a href='@Url.Action("Edit", new { id = Model.VendorId })'>
+    <button class="yellow">Edit Vendor</button>
+  </a>
+
+  <a href='@Url.Action("Delete", new { id = Model.VendorId })'>
+    <button class="red">Delete Vendor</button>
+  </a>
+</div>
+
+@* <p>@Html.ActionLink("Back to list", "Index")</p>
 <p>@Html.ActionLink("Add a Component", "AddComponent", new { id = Model.VendorId })</p>
 <p>@Html.ActionLink("Edit Vendor", "Edit", new { id = Model.VendorId })</p>
-<p>@Html.ActionLink("Delete Vendor", "Delete", new { id = Model.VendorId })</p>
+<p>@Html.ActionLink("Delete Vendor", "Delete", new { id = Model.VendorId })</p> *@

@@ -1,0 +1,36 @@
+@{
+  Layout = "_Layout";
+}
+
+@using ElectronicsVendor.Models
+@model ElectronicsVendor.Models.ModelLine
+@Html.HiddenFor(model => model.ComponentId)
+
+<h2>Details for modelline <span class="highlighted">@Html.DisplayFor(model => model.Name)<span></h2>
+<h3>Component: @Html.DisplayFor(model => model.Component.Type)</h3>
+
+<h3>Manufacturer: @Html.DisplayFor(model => model.Manufacturer)</h3>
+
+<h3>Vendors:</h3>
+<ul>
+  @foreach (ComponentVendor join in Model.Component.JoinEntities)
+    {
+      <li>@join.Vendor.Name</li>
+    }
+</ul>
+<h3>Wholesale Price: @(Model.Price * 2)</h3>
+
+
+
+<div class="button-area">
+  @* <a href='@Url.Action("Index")'>
+  <button>Back to List</button>
+  </a>
+  <a href='@Url.Action("Edit", new { id = Model.ModelLineId })'>
+  <button class="yellow">Edit ModelLine</button>
+  </a>
+
+  <a href='@Url.Action("Delete", new { id = Model.ModelLineId })'>
+  <button class="red">Delete ModelLine</button>
+  </a> *@
+</div>

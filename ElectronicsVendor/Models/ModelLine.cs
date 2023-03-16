@@ -7,8 +7,10 @@ namespace ElectronicsVendor.Models
   {
     public int ModelLineId { get; set; }
     public string Name { get; set; }
+    public string Manufacturer { get; set; }
+    public int Price { get; set; }
     public int ComponentId { get; set; }
     public Component Component { get; set; }
-    public List<ComponentVendor> JoinEntities { get; }
+
   }
 }

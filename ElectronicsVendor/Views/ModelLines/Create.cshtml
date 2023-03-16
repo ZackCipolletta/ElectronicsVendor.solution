@@ -9,19 +9,25 @@
 @using (Html.BeginForm())
 {
 
-   @* @Html.Hidden("Id"); *@
+  @* @Html.Hidden("Id"); *@
+  <div class="form-row">
+    @Html.LabelFor(model => model.Name)
+    <p>@Html.TextBoxFor(model => model.Name)</p>
+  </div>
 
-  @Html.LabelFor(model => model.Name)
-  <p>@Html.TextBoxFor(model => model.Name)</p>
+  <div class="form-row">
+    @Html.LabelFor(model => model.Manufacturer)
+    <p>@Html.TextBoxFor(model => model.Manufacturer)</p>
+  </div>
 
-  @Html.LabelFor(model => model.Manufacturer)
-  <p>@Html.TextBoxFor(model => model.Manufacturer)</p>
+  <div class="form-row">
+    @Html.LabelFor(model => model.Price)
+    <p>@Html.TextBoxFor(model => model.Price)</p>
+  </div>
 
-  @Html.LabelFor(model => model.Price)
-  <p>@Html.TextBoxFor(model => model.Price)</p>
 
   @* @Html.LabelFor(model => model.Component) <span>&nbsp;</span>
-  @Html.DropDownList("ComponentId") <span>&nbsp;</span> *@
+@Html.DropDownList("ComponentId") <span>&nbsp;</span> *@
   <p></p>
   <p><input type="submit" value="Add new model" class="btn btn-default" /></p>
 }

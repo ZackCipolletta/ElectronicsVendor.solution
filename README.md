@@ -1,3 +1,5 @@
+[https://dbdesigner.page.link/oz9nKp9g98ycEAwC9](https://dbdesigner.page.link/oz9nKp9g98ycEAwC9)
+
 TODO:
 
 When user clicks component type list item in Vendor Details list:
